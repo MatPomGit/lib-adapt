@@ -1,0 +1,280 @@
+[
+  {
+    "case_id": "reference_like",
+    "timing_qualified": true,
+    "qualified_device_timing_floor_ms": 30,
+    "window": {
+      "rule_id": "B",
+      "go_stimulus_id": "orange",
+      "go_successes": 4,
+      "go_total": 4,
+      "nogo_successes": 4,
+      "nogo_total": 4,
+      "correct_go_rt_ms": [
+        600,
+        620,
+        640,
+        660
+      ]
+    },
+    "expected": {
+      "B": {
+        "computable": true,
+        "q_relation": "zero"
+      },
+      "B+S": {
+        "computable": true,
+        "q_relation": "zero"
+      },
+      "B+V": {
+        "computable": true,
+        "q_relation": "zero"
+      },
+      "B+S+V": {
+        "computable": true,
+        "q_relation": "zero"
+      }
+    },
+    "prechallenge_reference": {
+      "rule_id": "A",
+      "go_successes": 5,
+      "go_total": 6,
+      "nogo_successes": 5,
+      "nogo_total": 6
+    },
+    "target_rule_recovery_reference": {
+      "rule_id": "B",
+      "go_stimulus_id": "orange",
+      "go_successes": 5,
+      "go_total": 6,
+      "nogo_successes": 5,
+      "nogo_total": 6,
+      "correct_go_rt_ms": [
+        600,
+        620,
+        640,
+        660
+      ]
+    }
+  },
+  {
+    "case_id": "behavioral_drop_only",
+    "timing_qualified": true,
+    "qualified_device_timing_floor_ms": 30,
+    "window": {
+      "rule_id": "B",
+      "go_stimulus_id": "orange",
+      "go_successes": 2,
+      "go_total": 4,
+      "nogo_successes": 2,
+      "nogo_total": 4,
+      "correct_go_rt_ms": [
+        600,
+        620,
+        640,
+        660
+      ]
+    },
+    "expected": {
+      "B": {
+        "computable": true,
+        "q_relation": "negative"
+      },
+      "B+S": {
+        "computable": true,
+        "q_relation": "negative"
+      },
+      "B+V": {
+        "computable": true,
+        "q_relation": "negative"
+      },
+      "B+S+V": {
+        "computable": true,
+        "q_relation": "negative"
+      }
+    },
+    "prechallenge_reference": {
+      "rule_id": "A",
+      "go_successes": 5,
+      "go_total": 6,
+      "nogo_successes": 5,
+      "nogo_total": 6
+    },
+    "target_rule_recovery_reference": {
+      "rule_id": "B",
+      "go_stimulus_id": "orange",
+      "go_successes": 5,
+      "go_total": 6,
+      "nogo_successes": 5,
+      "nogo_total": 6,
+      "correct_go_rt_ms": [
+        600,
+        620,
+        640,
+        660
+      ]
+    }
+  },
+  {
+    "case_id": "rt_slowing_only",
+    "timing_qualified": true,
+    "qualified_device_timing_floor_ms": 30,
+    "window": {
+      "rule_id": "B",
+      "go_stimulus_id": "orange",
+      "go_successes": 4,
+      "go_total": 4,
+      "nogo_successes": 4,
+      "nogo_total": 4,
+      "correct_go_rt_ms": [
+        800,
+        820,
+        840,
+        860
+      ]
+    },
+    "expected": {
+      "B": {
+        "computable": true,
+        "q_relation": "zero"
+      },
+      "B+S": {
+        "computable": true,
+        "q_relation": "negative"
+      },
+      "B+V": {
+        "computable": true,
+        "q_relation": "zero"
+      },
+      "B+S+V": {
+        "computable": true,
+        "q_relation": "negative"
+      }
+    },
+    "prechallenge_reference": {
+      "rule_id": "A",
+      "go_successes": 5,
+      "go_total": 6,
+      "nogo_successes": 5,
+      "nogo_total": 6
+    },
+    "target_rule_recovery_reference": {
+      "rule_id": "B",
+      "go_stimulus_id": "orange",
+      "go_successes": 5,
+      "go_total": 6,
+      "nogo_successes": 5,
+      "nogo_total": 6,
+      "correct_go_rt_ms": [
+        600,
+        620,
+        640,
+        660
+      ]
+    }
+  },
+  {
+    "case_id": "rt_variability_only",
+    "timing_qualified": true,
+    "qualified_device_timing_floor_ms": 30,
+    "window": {
+      "rule_id": "B",
+      "go_stimulus_id": "orange",
+      "go_successes": 4,
+      "go_total": 4,
+      "nogo_successes": 4,
+      "nogo_total": 4,
+      "correct_go_rt_ms": [
+        560,
+        610,
+        650,
+        700
+      ]
+    },
+    "expected": {
+      "B": {
+        "computable": true,
+        "q_relation": "zero"
+      },
+      "B+S": {
+        "computable": true,
+        "q_relation": "zero"
+      },
+      "B+V": {
+        "computable": true,
+        "q_relation": "negative"
+      },
+      "B+S+V": {
+        "computable": true,
+        "q_relation": "negative"
+      }
+    },
+    "prechallenge_reference": {
+      "rule_id": "A",
+      "go_successes": 5,
+      "go_total": 6,
+      "nogo_successes": 5,
+      "nogo_total": 6
+    },
+    "target_rule_recovery_reference": {
+      "rule_id": "B",
+      "go_stimulus_id": "orange",
+      "go_successes": 5,
+      "go_total": 6,
+      "nogo_successes": 5,
+      "nogo_total": 6,
+      "correct_go_rt_ms": [
+        600,
+        620,
+        640,
+        660
+      ]
+    }
+  },
+  {
+    "case_id": "timing_unavailable",
+    "timing_qualified": false,
+    "window": {
+      "rule_id": "B",
+      "go_stimulus_id": "orange",
+      "go_successes": 4,
+      "go_total": 4,
+      "nogo_successes": 4,
+      "nogo_total": 4,
+      "correct_go_rt_ms": [
+        610,
+        630
+      ]
+    },
+    "expected": {
+      "B": {
+        "computable": true,
+        "q_relation": "zero"
+      },
+      "B+S": {
+        "computable": false
+      },
+      "B+V": {
+        "computable": false
+      },
+      "B+S+V": {
+        "computable": false
+      }
+    },
+    "prechallenge_reference": {
+      "rule_id": "A",
+      "go_successes": 5,
+      "go_total": 6,
+      "nogo_successes": 5,
+      "nogo_total": 6
+    },
+    "target_rule_recovery_reference": {
+      "rule_id": "B",
+      "go_stimulus_id": "orange",
+      "go_successes": 5,
+      "go_total": 6,
+      "nogo_successes": 5,
+      "nogo_total": 6
+    }
+  }
+]
