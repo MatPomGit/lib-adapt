@@ -1,0 +1,182 @@
+[
+  {
+    "case_id": "safety_overrides_everything",
+    "input": {
+      "safety_override": true,
+      "child_stop": false,
+      "child_pause": false,
+      "sensory_overload": true,
+      "performance_state": "below",
+      "recovery_state": "not_observed",
+      "cognitive_level": 3,
+      "sensory_level": 2
+    },
+    "expected": {
+      "reason_code": "safety_override",
+      "proposed_action": "safe_stop",
+      "cognitive_level": 3,
+      "sensory_level": 2,
+      "clipped": false
+    }
+  },
+  {
+    "case_id": "child_stop_overrides_performance",
+    "input": {
+      "safety_override": false,
+      "child_stop": true,
+      "child_pause": false,
+      "sensory_overload": false,
+      "performance_state": "above",
+      "recovery_state": "stable",
+      "cognitive_level": 2,
+      "sensory_level": 1
+    },
+    "expected": {
+      "reason_code": "child_stop",
+      "proposed_action": "safe_stop",
+      "cognitive_level": 2,
+      "sensory_level": 1,
+      "clipped": false
+    }
+  },
+  {
+    "case_id": "child_pause_precedes_adaptation",
+    "input": {
+      "safety_override": false,
+      "child_stop": false,
+      "child_pause": true,
+      "sensory_overload": false,
+      "performance_state": "above",
+      "recovery_state": "stable",
+      "cognitive_level": 2,
+      "sensory_level": 1
+    },
+    "expected": {
+      "reason_code": "child_pause",
+      "proposed_action": "pause",
+      "cognitive_level": 2,
+      "sensory_level": 1,
+      "clipped": false
+    }
+  },
+  {
+    "case_id": "overload_simplifies_sensory_first",
+    "input": {
+      "safety_override": false,
+      "child_stop": false,
+      "child_pause": false,
+      "sensory_overload": true,
+      "performance_state": "below",
+      "recovery_state": "none",
+      "cognitive_level": 2,
+      "sensory_level": 2
+    },
+    "expected": {
+      "reason_code": "sensory_overload",
+      "proposed_action": "decrease_sensory",
+      "cognitive_level": 2,
+      "sensory_level": 1,
+      "clipped": false
+    }
+  },
+  {
+    "case_id": "low_performance_simplifies_sensory_before_cognitive",
+    "input": {
+      "safety_override": false,
+      "child_stop": false,
+      "child_pause": false,
+      "sensory_overload": false,
+      "performance_state": "below",
+      "recovery_state": "none",
+      "cognitive_level": 2,
+      "sensory_level": 1
+    },
+    "expected": {
+      "reason_code": "performance_below_with_sensory_load",
+      "proposed_action": "decrease_sensory",
+      "cognitive_level": 2,
+      "sensory_level": 0,
+      "clipped": false
+    }
+  },
+  {
+    "case_id": "low_performance_reduces_cognitive_at_minimum_sensory",
+    "input": {
+      "safety_override": false,
+      "child_stop": false,
+      "child_pause": false,
+      "sensory_overload": false,
+      "performance_state": "below",
+      "recovery_state": "none",
+      "cognitive_level": 2,
+      "sensory_level": 0
+    },
+    "expected": {
+      "reason_code": "performance_below",
+      "proposed_action": "decrease_cognitive",
+      "cognitive_level": 1,
+      "sensory_level": 0,
+      "clipped": false
+    }
+  },
+  {
+    "case_id": "unrecovered_event_blocks_escalation",
+    "input": {
+      "safety_override": false,
+      "child_stop": false,
+      "child_pause": false,
+      "sensory_overload": false,
+      "performance_state": "above",
+      "recovery_state": "not_observed",
+      "cognitive_level": 2,
+      "sensory_level": 0
+    },
+    "expected": {
+      "reason_code": "recovery_not_observed",
+      "proposed_action": "hold",
+      "cognitive_level": 2,
+      "sensory_level": 0,
+      "clipped": false
+    }
+  },
+  {
+    "case_id": "good_performance_increases_cognitive",
+    "input": {
+      "safety_override": false,
+      "child_stop": false,
+      "child_pause": false,
+      "sensory_overload": false,
+      "performance_state": "above",
+      "recovery_state": "stable",
+      "cognitive_level": 2,
+      "sensory_level": 0
+    },
+    "expected": {
+      "reason_code": "performance_above",
+      "proposed_action": "increase_cognitive",
+      "cognitive_level": 3,
+      "sensory_level": 0,
+      "clipped": false
+    }
+  },
+  {
+    "case_id": "cognitive_ceiling_is_explicitly_clipped",
+    "input": {
+      "safety_override": false,
+      "child_stop": false,
+      "child_pause": false,
+      "sensory_overload": false,
+      "performance_state": "above",
+      "recovery_state": "stable",
+      "cognitive_level": 4,
+      "sensory_level": 0
+    },
+    "expected": {
+      "reason_code": "performance_above",
+      "proposed_action": "increase_cognitive",
+      "cognitive_level": 4,
+      "sensory_level": 0,
+      "clipped": true
+    }
+  }
+]
