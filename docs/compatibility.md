@@ -1,9 +1,3 @@
-# Macierz zgodności
+# Compatibility
 
-Dokumentuj tylko testy **rzeczywiście wykonane**. Rozdziel `SUPPORTED`, `EXPERIMENTAL`, `UNSUPPORTED`, `NOT_RUN`.
-
-| Środowisko | Wersja | Test / artefakt | Status |
-| --- | --- | --- | --- |
-| REPLACE_PLATFORM | REPLACE_VERSION | brak | NOT_RUN |
-
-Uwzględnij OS, runtime, urządzenie, GPU/CPU, Unity URP/HDRP, Web i Android, jeżeli dotyczą.
+Kotlin JVM plugin 2.4.21, JVM 17 and Gradle 9.6.0. Android consumer integration remains NOT_RUN. Experimental API 0.1.0.

@@ -1,11 +1,17 @@
 {
   "schema_version": 1,
-  "name": "REPLACE_PACKAGE_ID",
+  "name": "org.matpomgit:lib-adapt",
   "api_version": "0.1.0",
   "stability": "experimental",
-  "public_entrypoints": [],
+  "public_entrypoints": [
+    "org.matpomgit.adapt.RecoveryMonitorConfig",
+    "org.matpomgit.adapt.RecoveryMonitorState",
+    "org.matpomgit.adapt.RecoveryMonitorStatus"
+  ],
   "serialization_contracts": [],
   "breaking_change_policy": "major_version_with_migration_guide",
   "deprecation_policy": "documented_before_removal",
-  "runtime_requirements": []
+  "runtime_requirements": [
+    "JVM 17"
+  ]
 }
