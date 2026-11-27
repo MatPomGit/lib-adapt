@@ -27,4 +27,5 @@ jobs:
         with:
           gradle-version: '9.6.0'
           cache-disabled: true
-      - run: gradle --no-daemon test
+      - run: gradle --no-daemon test jar publishMavenJavaPublicationToBuildRepository
+      - run: test -s build/repository/org/matpomgit/lib-adapt/0.1.0/lib-adapt-0.1.0.jar

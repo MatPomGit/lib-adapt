@@ -1,5 +1,3 @@
-# Instalacja
+# Local build
 
-Uzupełnij **po** wdrożeniu konkretnego stosu technologicznego. Opisz wymagania systemu, instrukcję środowiska izolowanego, sposób użycia stabilnego wydania i sprawdzenie checksum.
-Przykłady mają używać przypiętej wersji, tagu lub SHA, nie przypadkowego HEAD.
-Zależności nie są instalowane automatycznie podczas walidacji szablonu.
+JDK 17 and Gradle 9.6.0. Run `gradle test jar` in an isolated checkout. `gradle publishMavenJavaPublicationToBuildRepository` writes a local Maven repository under `build/repository`; no remote publishing destination is configured. Coordinates: `org.matpomgit:lib-adapt:0.1.0`.
